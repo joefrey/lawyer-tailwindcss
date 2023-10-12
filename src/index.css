@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@400;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.testimonial .testimonialSwiper .swiper-pagination span {
+  @apply inline-block my-0 mx-[7px] cursor-pointer bg-dark opacity-70 duration-300 transition-all ease-in-out;
+}
+.testimonial
+  .testimonialSwiper
+  .swiper-pagination
+  span.swiper-pagination-bullet-active {
+  @apply bg-secondary opacity-100;
+}
+
+/* mobile menu active */
+.mobile-menu {
+  -webkit-transition: 0.5s all cubic-bezier(0.86, 0, 0.07, 1);
+  -moz-transition: 0.5s all cubic-bezier(0.86, 0, 0.07, 1);
+  transition: 0.5s all cubic-bezier(0.86, 0, 0.07, 1);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  transform: translateX(100%);
+}
+body.mobile-menu-active {
+  @apply relative;
+}
+body.mobile-menu-active:before {
+  @apply opacity-100 visible;
+}
+body.mobile-menu-active .mobile-menu .menu-toggle i {
+  @apply text-[32px] text-dark;
+}
+body.mobile-menu-active .mobile-menu {
+  @apply translate-x-0;
+}
