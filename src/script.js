@@ -3,7 +3,24 @@ var $ = require("jquery");
 
 import "swiper/swiper-bundle.css";
 import { Navigation, Pagination } from "swiper/modules";
+
 $(function () {
+  const swiper = new Swiper(".testimonialSwiper", {
+    loop: true,
+    slidesPerView: 1,
+    speed: 700,
+    spaceBetween: 20,
+    modules: [Navigation, Pagination],
+    navigation: {
+      nextEl: ".custom-swiper-button-next",
+      prevEl: ".custom-swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
   var mobileMenuToggle = function () {
     $(".js-menu-toggle").on("click", function (e) {
       e.preventDefault();
@@ -39,19 +56,4 @@ $(function () {
     });
   };
   mobileMenuToggle();
-  const swiper = new Swiper(".testimonialSwiper", {
-    loop: true,
-    slidesPerView: 1,
-    speed: 700,
-    spaceBetween: 20,
-    modules: [Navigation, Pagination],
-    navigation: {
-      nextEl: ".custom-swiper-button-next",
-      prevEl: ".custom-swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
 });
